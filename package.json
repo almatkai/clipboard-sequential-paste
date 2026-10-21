@@ -3,7 +3,7 @@
   "name": "clipboard-sequential-paste",
   "title": "Clipboard Sequential Paste",
   "description": "Copy a list to your clipboard and paste items one by one.",
-  "icon": "extension-icon.png",
+  "icon": "assets/extension-icon.png",
   "author": "almatkai",
   "license": "MIT",
   "commands": [
