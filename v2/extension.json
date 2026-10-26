@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 3,
+  "id": "com.tezbar.native.clipboard-sequential-paste",
+  "slug": "clipboard-sequential-paste",
+  "name": "Clipboard Sequential Paste",
+  "version": "0.2.0",
+  "description": "Copy a list and paste its items sequentially.",
+  "icon": "resources/extension-icon.png",
+  "runtime": "rust",
+  "execution": "process",
+  "protocolVersion": 1,
+  "repository": "https://github.com/almatkai/clipboard-sequential-paste",
+  "author": "almatkai",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "commands": [
+    {
+      "name": "paste-next-item",
+      "title": "Paste Next Item",
+      "mode": "no-view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "concurrency": "serialize",
+      "timeoutMs": 30000,
+      "refreshMs": null
+    }
+  ],
+  "preferences": [],
+  "replaces": [
+    "com.tezbar.clipboard-sequential-paste",
+    "raycast.clipboard-sequential-paste"
+  ],
+  "capabilities": [
+    "host.clipboard.read",
+    "host.clipboard.pasteText",
+    "host.window.visibility"
+  ],
+  "artifacts": {},
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run",
+      "note": "Production process QA uses synthetic clipboard RPC; GUI focus and paste untested."
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run",
+      "note": "No Windows execution or real clipboard verification."
+    }
+  ]
+}

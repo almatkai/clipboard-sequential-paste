@@ -1,0 +1,26 @@
+Clipboard Sequential Paste V2 — feature branch implementation, development only.
+Own source: https://github.com/almatkai/clipboard-sequential-paste at
+ dd58c5e7b4c1213abd645ed69f30c0479b6f56f0 (MIT, literal original LICENSE retained).
+Upstream source and original icon: https://github.com/raycast/extensions at
+ 6734d85992290066fd31a7f5bee3cca3d3545a1a, extensions/clipboard-sequential-paste.
+Original icon is copied without modification. Raycast's authentic root MIT license
+is included; no separate icon-specific grant was found or invented.
+Independent SDK 0.1.1: https://github.com/almatkai/tezbar-extension-sdk-rust at
+ e955911f0bf5b558f9d3eb5183df0adc95c22af2 (Apache-2.0), LICENSE and NOTICE included.
+Frozen host evidence: Tezbar ea100cee3f69711de12485ba061950c5fc65258f;
+fixture license included. Host patches are UNAPPLIED and are not bundled executable
+host modifications. They require parent review and host validation before use.
+Cargo.lock identifies all dependencies. licenses/LOCKED-CRATES.json lists exact
+versions, checksums, declared license expressions and authentic packaged notices.
+r-efi 6.0.0 omits standalone license texts from its registry archive; its authentic
+README/AUTHORS provide license/copyright evidence. This gap is explicit, not an
+invented license grant. It is not an ARM64 macOS/Windows compiled dependency.
+Test tooling notices are in licenses/TEST-TOOLING.json. Test-only V1 TypeScript,
+React and mocked Raycast fixtures are not a JavaScript product runtime.
+This package does not claim installed, published, released, or real OS verification.
+Exact-lock test dependency evidence for all original npm/schema packages is in
+licenses/LOCKED-NPM.json. Some target-specific packages are not installed here;
+@raycast/api and @raycast/utils registry archives also omit standalone notices.
+Their original metadata declares MIT, but no substitute grant was fabricated.
+These are test/evidence inputs, not Rust runtime dependencies. Review missing
+notice evidence before redistributing those tooling packages themselves.

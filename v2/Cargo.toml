@@ -1,0 +1,14 @@
+[package]
+name = "clipboard-sequential-paste"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT"
+
+[dependencies]
+tezbar-extension-sdk = { git = "https://github.com/almatkai/tezbar-extension-sdk-rust.git", rev = "e955911f0bf5b558f9d3eb5183df0adc95c22af2", version = "=0.1.1" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+tempfile = "3"
+uuid = { version = "=1.23.3", features = ["v4"] }

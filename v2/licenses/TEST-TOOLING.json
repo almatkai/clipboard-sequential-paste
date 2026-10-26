@@ -1,0 +1,52 @@
+[
+  {
+    "package": "typescript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "notices": [
+      "licenses/test-tooling/typescript/LICENSE.txt"
+    ],
+    "missing_authentic_notice": false
+  },
+  {
+    "package": "react",
+    "version": "19.0.0",
+    "license": "MIT",
+    "notices": [
+      "licenses/test-tooling/react/LICENSE"
+    ],
+    "missing_authentic_notice": false
+  },
+  {
+    "package": "@raycast/api",
+    "version": "1.104.25",
+    "license": "MIT",
+    "notices": [],
+    "missing_authentic_notice": true
+  },
+  {
+    "package": "@raycast/utils",
+    "version": "2.3.0",
+    "license": "MIT",
+    "notices": [],
+    "missing_authentic_notice": true
+  },
+  {
+    "package": "tsx",
+    "version": "4.23.13",
+    "license": "MIT",
+    "notices": [
+      "licenses/test-tooling/tsx/LICENSE"
+    ],
+    "missing_authentic_notice": false
+  },
+  {
+    "package": "esbuild",
+    "version": "0.27.7",
+    "license": "MIT",
+    "notices": [
+      "licenses/test-tooling/esbuild/LICENSE.md"
+    ],
+    "missing_authentic_notice": false
+  }
+]

@@ -1,0 +1,1091 @@
+[
+  {
+    "name": "crlf-empty-trailing-wrap",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\r\n\r\nb\n"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 4"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\r\n\r\nb\n",
+          "StorageList": "[\"a\",\"\",\"b\",\"\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "",
+            "b",
+            ""
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            ""
+          ],
+          [
+            "toast",
+            "Pasted item 2 of 4"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\r\n\r\nb\n",
+          "StorageList": "[\"a\",\"\",\"b\",\"\"]",
+          "StorageIndex": 2
+        },
+        "globals": {
+          "list": [
+            "a",
+            "",
+            "b",
+            ""
+          ],
+          "index": 1
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11300
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "b"
+          ],
+          [
+            "toast",
+            "Pasted item 3 of 4"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11300",
+          "StorageItem": "a\r\n\r\nb\n",
+          "StorageList": "[\"a\",\"\",\"b\",\"\"]",
+          "StorageIndex": 3
+        },
+        "globals": {
+          "list": [
+            "a",
+            "",
+            "b",
+            ""
+          ],
+          "index": 2
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11950
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            ""
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11950"
+        },
+        "globals": {
+          "list": [
+            "a",
+            "",
+            "b",
+            ""
+          ],
+          "index": 3
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 12600
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            ""
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "12600"
+        },
+        "globals": {
+          "list": [
+            "a",
+            "",
+            "b",
+            ""
+          ],
+          "index": 3
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 13250
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            ""
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "13250"
+        },
+        "globals": {
+          "list": [
+            "a",
+            "",
+            "b",
+            ""
+          ],
+          "index": 3
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "debounce-boundary",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\nb\nc"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10649
+        },
+        "calls": [
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "b"
+          ],
+          [
+            "toast",
+            "Pasted item 2 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 2
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 1
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10651
+        },
+        "calls": [
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 2
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 1
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11300
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "c"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11300"
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 2
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "new-list-global-index",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\nb\nc"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "b"
+          ],
+          [
+            "toast",
+            "Pasted item 2 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 2
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 1
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11300,
+          "copy": "x\ny\nz"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "y"
+          ],
+          [
+            "toast",
+            "Pasted item 2 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11300",
+          "StorageItem": "x\ny\nz",
+          "StorageList": "[\"x\",\"y\",\"z\"]",
+          "StorageIndex": 2
+        },
+        "globals": {
+          "list": [
+            "x",
+            "y",
+            "z"
+          ],
+          "index": 1
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11950
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "z"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11950"
+        },
+        "globals": {
+          "list": [
+            "x",
+            "y",
+            "z"
+          ],
+          "index": 2
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 12600,
+          "copy": "short"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            {
+              "undefined": true
+            }
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "12600"
+        },
+        "globals": {
+          "list": [
+            "short"
+          ],
+          "index": 2
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "restart",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\nb\nc"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650,
+          "restart": true
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "b"
+          ],
+          [
+            "toast",
+            "Pasted item 2 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 2
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 1
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11300
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "c"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11300"
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 2
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11950,
+          "restart": true
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11950",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 0
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "empty-and-lone-cr",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": ""
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "toast",
+            "Clipboard is empty."
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000"
+        },
+        "globals": {
+          "list": [],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650,
+          "copy": "a\rb\n\r"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a\rb"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 2"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\rb\n\r",
+          "StorageList": "[\"a\\rb\",\"\\r\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a\rb",
+            "\r"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11300
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "\r"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11300"
+        },
+        "globals": {
+          "list": [
+            "a\rb",
+            "\r"
+          ],
+          "index": 1
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "failed-paste",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\nb",
+          "fail": true
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb",
+          "StorageList": "[\"a\",\"b\"]",
+          "StorageIndex": 0
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b"
+          ],
+          "index": 0
+        },
+        "error": "synthetic paste failure"
+      },
+      {
+        "step": {
+          "at": 10650
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 2"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650",
+          "StorageItem": "a\nb",
+          "StorageList": "[\"a\",\"b\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b"
+          ],
+          "index": 0
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "clock-rollback-source",
+    "writes": false,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\nb"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 2"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb",
+          "StorageList": "[\"a\",\"b\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 9000
+        },
+        "calls": [
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb",
+          "StorageList": "[\"a\",\"b\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "b"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650"
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b"
+          ],
+          "index": 1
+        },
+        "error": null
+      }
+    ]
+  },
+  {
+    "name": "host-writes-source-breakage",
+    "writes": true,
+    "trace": [
+      {
+        "step": {
+          "at": 10000,
+          "copy": "a\nb\nc"
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted item 1 of 3"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10000",
+          "StorageItem": "a\nb\nc",
+          "StorageList": "[\"a\",\"b\",\"c\"]",
+          "StorageIndex": 1
+        },
+        "globals": {
+          "list": [
+            "a",
+            "b",
+            "c"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 10650
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "10650"
+        },
+        "globals": {
+          "list": [
+            "a"
+          ],
+          "index": 0
+        },
+        "error": null
+      },
+      {
+        "step": {
+          "at": 11300
+        },
+        "calls": [
+          [
+            "read"
+          ],
+          [
+            "paste",
+            "a"
+          ],
+          [
+            "toast",
+            "Pasted every item from list"
+          ],
+          [
+            "close"
+          ]
+        ],
+        "store": {
+          "StorageLastExecution": "11300"
+        },
+        "globals": {
+          "list": [
+            "a"
+          ],
+          "index": 0
+        },
+        "error": null
+      }
+    ]
+  }
+]

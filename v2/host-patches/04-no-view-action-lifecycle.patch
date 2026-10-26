@@ -1,0 +1,38 @@
+--- a/src-tauri/src/native_core/extensions/native.rs
++++ b/src-tauri/src/native_core/extensions/native.rs
+@@ -785,14 +785,22 @@
+         } else {
+             None
+         };
+-        tokio::select! {biased;_=cancel.changed()=>Err("Extension session disposed".into()),_=async{if let Some(s)=&mut search{let _=s.changed().await;}else{std::future::pending::<()>().await;}}=>Err("Search superseded by a newer query".into()),result=async{
++        let result = tokio::select! {biased;_=cancel.changed()=>Err("Extension session disposed".into()),_=async{if let Some(s)=&mut search{let _=s.changed().await;}else{std::future::pending::<()>().await;}}=>Err("Search superseded by a newer query".into()),result=async{
+             let _serial=if channel=="extension:refresh-session"{match entry.serial.try_lock(){Ok(g)=>g,Err(_)=>return Ok(json!({"ok":true,"mode":"unchanged"}))}}
+             else if entry.policy["concurrency"]=="reject-while-busy"{entry.serial.try_lock().map_err(|_|"An extension action is already in progress")?}else{entry.serial.lock().await};
+             if !entry.active.load(Ordering::Acquire){return Err("Extension session disposed".into());}
+             let value=entry.process.call("session.call",json!({"sessionId":id,"operation":channel,"payload":body}),deadline(&entry)).await?;
+             if !entry.active.load(Ordering::Acquire){return Err("Extension session disposed".into());}
+             annotate(&entry,id,value)
+-        }=>result}
++        }=>result};
++        let value = result?;
++        if value["mode"] == "no-view" {
++            // Finish outside the cancellation select and serial lock: remove
++            // signals entry.cancel and disposal must still be awaited.
++            self.remove(id);
++            entry.process.dispose(id).await;
++        }
++        Ok(value)
+     }
+ }
+ fn deadline(entry: &Entry) -> Duration {
+--- a/src/renderer/ExtensionRuntimeView.tsx
++++ b/src/renderer/ExtensionRuntimeView.tsx
+@@ -661,7 +661,7 @@
+               if (notice) showActionNotice(notice.message, isFormSurface)
+ 
+               if (result.mode === 'no-view') {
+-                setState((prev) => ({ ...prev, message: undefined }))
++                onBack()
+                 return
+               }
+ 
