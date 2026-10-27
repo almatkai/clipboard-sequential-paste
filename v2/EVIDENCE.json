@@ -1,0 +1,70 @@
+{
+  "kind": "local-development-QA-only",
+  "recorded_at_utc": "2026-10-25T21:51:46.695976+00:00",
+  "source_head": "dd58c5e7b4c1213abd645ed69f30c0479b6f56f0",
+  "branch": "feat/native-v2-rust",
+  "sdk": {
+    "version": "0.1.1",
+    "git": "https://github.com/almatkai/tezbar-extension-sdk-rust.git",
+    "rev": "e955911f0bf5b558f9d3eb5183df0adc95c22af2",
+    "cargo_home": "v2/.qa/cargo-home",
+    "sibling_dependency": false
+  },
+  "host_rev": "ea100cee3f69711de12485ba061950c5fc65258f",
+  "tools": {
+    "stable": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "msrv": "rustc 1.85.0 (4d91de4e4 2025-02-17)",
+    "node": "v26.7.0",
+    "python": "Python 3.9.6"
+  },
+  "passed": {
+    "v1_smoke_tests": 1,
+    "v1_typecheck": true,
+    "source_oracle_flows": 8,
+    "source_oracle_steps": 31,
+    "rust_unit_domain_tests_per_toolchain": 11,
+    "host_fixture_tests_per_toolchain": 5,
+    "schema_negative_cases": 14,
+    "host_unapplied_patches": 4,
+    "renderer_element_callbacks_and_actual_action_closure": true,
+    "rustfmt": true,
+    "strict_all_target_clippy_toolchains": [
+      "stable",
+      "1.85.0"
+    ],
+    "production_pipes_runs": [
+      "stable",
+      "1.85.0",
+      "extracted-arm64-release"
+    ],
+    "production_scenarios_each_run": 21,
+    "no_view_dispose_reopen_each_run": 140,
+    "optional_pinned_git_object_crosscheck": true,
+    "pinned_host_empty_text_helpers": true,
+    "expanded_tests_and_strict_clippy_followup": "stable + 1.85.0 passed after adding actual empty-text helper fixtures; production code unchanged"
+  },
+  "development_archive": {
+    "path": "v2/.qa/clipboard-sequential-paste-aarch64-apple-darwin-dev.zip",
+    "ignored": true,
+    "installed": false,
+    "published": false,
+    "sha256": "1d6e9cbfcdc5b8a5c4eb2157ed4cd82ab04cd013b86ee04c9125ffcb729012de",
+    "executable_sha256": "1597b55642e0283af71c8517d860c66bb4f29f578a60d2413fc56582dabf7c70",
+    "inventory_members": 195,
+    "target": "aarch64-apple-darwin",
+    "source_artifacts": {}
+  },
+  "not_passed": {
+    "windows_msvc_check": "attempted; E0463 std/core target missing; no installation",
+    "macos_real_clipboard_focus_paste_GUI": "not-run",
+    "windows_execution_and_real_clipboard_focus_paste_GUI": "not-run",
+    "full_host_application_build_or_GUI": "not-run",
+    "final_xerj": "incomplete: frozen dataset rejects v2/Cargo.toml; original namespace retained"
+  },
+  "side_effect_limits": [
+    "clipboard ownership equality cannot distinguish same-byte user copies in one process",
+    "clipboard read/write/focus/paste can race",
+    "ACK and storage are not a transaction; unknown pending effect requires explicit recovery",
+    "no exactly-once claim"
+  ]
+}

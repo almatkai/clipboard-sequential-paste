@@ -1,0 +1,51 @@
+--- a/src-tauri/src/native_core/extensions/registry.rs
++++ b/src-tauri/src/native_core/extensions/registry.rs
+@@ -15,6 +15,7 @@
+     slug: String,
+     path: PathBuf,
+     manifest: Value,
++    package_dir: Option<PathBuf>,
+     data_dir: PathBuf,
+ }
+ 
+@@ -73,9 +74,13 @@
+             };
+             let Ok(slug) = slug(name) else { continue };
+             let native = name.starts_with("com.tezbar.native.");
++            let mut package_dir = None;
+             let mut manifest = if native {
+                 match super::process_install::resolve(ctx, name) {
+-                    Ok(package) => package.manifest,
++                    Ok(package) => {
++                        package_dir = Some(package.dir);
++                        package.manifest
++                    },
+                     Err(error) => {
+                         // A damaged canonical directory is NEVER a Raycast package.
+                         let mut value = read_json(&path.join("package.json"))
+@@ -109,6 +114,7 @@
+                 slug,
+                 path,
+                 manifest,
++                package_dir,
+                 data_dir: ctx.paths.data_dir.clone(),
+             });
+         }
+@@ -248,6 +254,9 @@
+         extension.path.join(relative),
+         extension.path.join("assets").join(relative),
+     ];
++    if let Some(package_dir) = &extension.package_dir {
++        candidates.insert(0, package_dir.join(relative));
++    }
+     if extension.id.starts_with("com.tezbar.native.") {
+         if let Some(packages) = extension.path.parent() {
+             if let Some(extensions) = packages.parent() {
+@@ -576,6 +585,7 @@
+         slug: slug(id)?,
+         path,
+         manifest: Value::Null,
++        package_dir: None,
+         data_dir: ctx.paths.data_dir.clone(),
+     };
+     let source = preferences_path(&extension)?;

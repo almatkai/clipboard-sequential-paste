@@ -18,3 +18,5 @@ To avoid overwriting the clipboard list with the item currently being pasted, a 
 2. **Paste Items**: Use the command to paste the next item from your clipboard list sequentially.
 
 **Warning**: If you attempt to paste the next item without any input focused (e.g., in a random application), the item will not be pasted, similar to the behavior of the standard paste function. But the extension will still move on to the next item.
+
+[Standalone Rust V2 (development)](v2/README.md).

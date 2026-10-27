@@ -1,0 +1,15 @@
+# INACTIVE EXAMPLE ONLY. Not a repository workflow and not execution evidence.
+name: standalone-rust-v2-example
+on: [workflow_dispatch]
+jobs:
+  test:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-node@v4
+        with: { node-version: '26' }
+      - run: rustup toolchain install 1.85.0 --component clippy,rustfmt
+      - run: sh v2/scripts/qa.sh
+# Windows x64 MSVC build + native platform smoke remain separate release gates.
+# No install, publishing, release artifact URLs or trusted host catalog mutation.
